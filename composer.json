@@ -1,0 +1,26 @@
+{
+    "name": "netresearch/nr-sync",
+    "type": "typo3-cms-extension",
+    "description": "Netresearch Sync",
+    "keywords": ["TYPO3 CMS", "content", "synchronization", "editor"],
+    "license": [
+        "AGPL-3.0+"
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7|^9.5"
+    },
+    "replace": {
+        "nr_sync": "self.version",
+        "typo3-ter/nr-sync": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "Netresearch\\NrSync\\": "Classes/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.15.x-dev"
+        }
+    }
+}

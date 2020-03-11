@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-09-10T12:51:17Z" product-name="nr_sync">
+		<header/>
+		<body>
+			<trans-unit id="tx_nrsnyc_scheduler.name">
+				<source>Import Sync</source>
+			</trans-unit>
+			<trans-unit id="tx_nrsnyc_scheduler.description">
+				<source>Task to import syncs</source>
+			</trans-unit>
+			<trans-unit id="enable_reporting">
+				<source>Enable email reporting</source>
+			</trans-unit>
+			<trans-unit id="reporting_emails">
+				<source>Reporting email addresses</source>
+			</trans-unit>
+			<trans-unit id="reporting_subject">
+				<source>Subject of the reporting emails</source>
+			</trans-unit>
+			<trans-unit id="reporting_message">
+				<source>Message of the reporting email</source>
+			</trans-unit>
+			<trans-unit id="environment">
+				<source>Environment (TYPO3_CONTEXT) where the scheduler task should run</source>
+			</trans-unit>
+			<trans-unit id="sync_storage_path">
+				<source>Path where the sync file are stored in.</source>
+			</trans-unit>
+			<trans-unit id="sync_urls_path">
+				<source>Path where the urls files to execute are stored in.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

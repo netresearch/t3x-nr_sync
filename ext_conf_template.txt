@@ -1,0 +1,6 @@
+
+# cat=basic/11; type=boolean; label=LLL:EXT:nr_sync/Resources/Private/Language/locallang.xlf:lock.label
+syncModuleLocked=0
+
+# cat=basic/11; type=text; label=LLL:EXT:nr_sync/Resources/Private/Language/locallang.xlf:lock.message
+syncModuleLockedMessage=Content sync is currently disabled.

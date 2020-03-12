@@ -18,9 +18,11 @@ $EM_CONF[$_EXTKEY] = array(
 	'author_company' => 'Netresearch DTT GmbH',
 	'author_email' => 'sebastian.mendel@netresearch.de, alexander.opitz@netresearch.de, tobias.hein@netresearch.de',
 	'state' => 'alpha',
+	'version' => '0.15.0',
 	'createDirs' => 'db',
 	'constraints' => array(
 		'depends' => array(
+		    'typo3' => '8.7.0 - 9.5.13'
 		),
 		'conflicts' => array(
 		),

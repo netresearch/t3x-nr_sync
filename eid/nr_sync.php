@@ -8,7 +8,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility,
  * eID interface for nr_sync
  *
  * @package   Netresearch\NrSync
- * @author    Sebatsian Mendel <sebastian.mendel@netresearch.de>
+ * @author    Sebastian Mendel <sebastian.mendel@netresearch.de>
  * @author    Axel Seemann <axel.seemann@netresearch.de>
  * @company   Netresearch DTT GmbH
  * @copyright 2020 Netresearch DTT GmbH

@@ -215,6 +215,10 @@
 				<source>Domain Records</source>
 				<target>Domain Records</target>
 			</trans-unit>
+			<trans-unit id="News">
+				<source>News</source>
+				<target>News</target>
+			</trans-unit>
 			<trans-unit id="FAL">
 				<source>FAL</source>
 				<target>Medien und Bilder</target>

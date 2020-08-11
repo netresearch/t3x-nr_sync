@@ -168,6 +168,9 @@
 			<trans-unit id="FAL">
 				<source>FAL</source>
 			</trans-unit>
+			<trans-unit id="News">
+				<source>News</source>
+			</trans-unit>
 			<trans-unit id="FE groups">
 				<source>FE groups</source>
 			</trans-unit>

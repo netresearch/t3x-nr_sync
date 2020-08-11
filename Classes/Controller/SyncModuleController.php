@@ -9,6 +9,7 @@ use Netresearch\NrSync\Helper\Area;
 use Netresearch\NrSync\Module\AssetModule;
 use Netresearch\NrSync\Module\BaseModule;
 use Netresearch\NrSync\Module\FalModule;
+use Netresearch\NrSync\Module\NewsModule;
 use Netresearch\NrSync\Module\StateModule;
 use Netresearch\NrSync\SyncList;
 use Netresearch\NrSync\SyncListManager;
@@ -277,6 +278,10 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
                 'dumpFileName' => 'text-db.sql',
                 'accessLevel'  => 100,
             ];
+        }
+
+        if (ExtensionManagementUtility::isLoaded('news')) {
+            $this->arFunctions[48] = NewsModule::class;
         }
 
         $this->getLanguageService()->includeLLFile('EXT:nr_sync/Resources/Private/Language/locallang.xlf');
@@ -2086,6 +2091,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
         $menu->setLabel(
             $this->getLabel('label.sync_type')
         );
+
         foreach ($this->MOD_MENU['function'] as $controller => $title) {
             $item = $menu
                 ->makeMenuItem()

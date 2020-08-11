@@ -47,6 +47,10 @@ trait TranslationTrait
             $languageFile . ":" . $name
         );
 
+        if (empty($translation)) {
+            return $name;
+        }
+
         if (empty($data)) {
             return $translation;
         }

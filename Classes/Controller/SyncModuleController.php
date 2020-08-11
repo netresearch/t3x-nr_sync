@@ -219,7 +219,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
                 'sys_redirect',
             ],
             'dumpFileName' => 'sys_redirect.sql',
-            'accessLevel'  => 100,
+            'accessLevel'  => 50,
         ],
     ];
 

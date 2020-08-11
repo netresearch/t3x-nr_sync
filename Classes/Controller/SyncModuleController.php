@@ -1188,14 +1188,14 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
     public function createDumpToAreas(
         array $arTables, string $strDumpFile, string $targetName = null
     ) {
-        $tempFolder = $this->getSyncFolder()->getSubfolder($this->strTempFolder);
+        $tempFolder = $this->getTempFolder();
         $filename = date('YmdHis_') . $strDumpFile;
         $tempFileIdentifier = $tempFolder->getIdentifier() . $strDumpFile;
         $target = $targetName ?? $this->MOD_SETTINGS['target'];
 
 
-        if ( $this->getDefaultStorage()->hasFile($tempFileIdentifier)
-             || $this->getDefaultStorage()->hasFile($tempFileIdentifier . '.gz')
+        if ( $this->getTempFolder()->getStorage()->hasFile($tempFileIdentifier)
+             || $this->getTempFolder()->getStorage()->hasFile($tempFileIdentifier . '.gz')
         ) {
             $this->addError(
                 $this->getLabel('error.last_sync_not_finished')
@@ -1203,7 +1203,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
             return false;
         }
 
-        $this->getDefaultStorage()->createFile(
+        $this->getTempFolder()->getStorage()->createFile(
             $strDumpFile, $tempFolder
         );
 
@@ -1217,7 +1217,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
 
 
         try {
-            $dumpFile = $this->getDefaultStorage()->getFile($tempFileIdentifier);
+            $dumpFile = $this->getTempFolder()->getStorage()->getFile($tempFileIdentifier);
         } catch (\Exception $exception) {
             $this->addInfo(
                 $this->getLabel('info.no_data_dumped')
@@ -1259,7 +1259,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
                 return false;
             }
         }
-        $this->getDefaultStorage()->deleteFile($compressedDumFile);
+        $this->getTempFolder()->getStorage()->deleteFile($compressedDumFile);
         return true;
     }
 

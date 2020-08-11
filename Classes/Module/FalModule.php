@@ -27,7 +27,6 @@ class FalModule extends BaseModule
         'sys_category_record_mm',
         'sys_file_reference',
         'sys_collection',
-        'sys_file_storage',
         'sys_file_metadata',
     ];
 

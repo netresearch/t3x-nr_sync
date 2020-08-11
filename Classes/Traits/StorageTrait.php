@@ -31,6 +31,18 @@ trait StorageTrait
     private $syncFolder;
 
     /**
+     * @var Folder
+     */
+    private $tempFolder;
+
+    /**
+     * Identifier for TempFolder
+     *
+     * @var string
+     */
+    private $tempFolderIdentifier = "nr_sync_temp/";
+
+    /**
      * @var string
      */
     private $baseFolderIdentifier = 'nr_sync/';
@@ -48,6 +60,29 @@ trait StorageTrait
 
         $this->defaultStorage = ResourceFactory::getInstance()->getDefaultStorage();
         return $this->defaultStorage;
+    }
+
+    /**
+     * Returns a instance of the temp-folder Instance
+     *
+     * @return Folder|\TYPO3\CMS\Core\Resource\InaccessibleFolder|null
+     * @throws \TYPO3\CMS\Core\Resource\Exception\ExistingTargetFolderException
+     * @throws \TYPO3\CMS\Core\Resource\Exception\InsufficientFolderAccessPermissionsException
+     * @throws \TYPO3\CMS\Core\Resource\Exception\InsufficientFolderWritePermissionsException
+     */
+    private function getTempFolder()
+    {
+        if ($this->tempFolder instanceof Folder) {
+            return $this->tempFolder;
+        }
+
+        $storage = ResourceFactory::getInstance()->getStorageObject(1);
+        if (false === $storage->hasFolder($this->tempFolderIdentifier)) {
+            $storage->createFolder($this->tempFolderIdentifier);
+        }
+
+        $this->tempFolder = $storage->getFolder($this->tempFolderIdentifier);
+        return $this->tempFolder;
     }
 
     /**

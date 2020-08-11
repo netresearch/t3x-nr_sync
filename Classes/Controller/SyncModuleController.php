@@ -1171,18 +1171,22 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
     }
 
     /**
+     * Creating dump to areas
      *
-     * @param string[] $arTables     Table names
-     * @param string   $strDumpFile  Name of the dump file.
+     * @param string[]      $arTables    Table names
+     * @param string        $strDumpFile Name of the dump file.
+     * @param string|null   $targetName  Target to create sync for
      *
      * @return boolean success
      */
-    protected function createDumpToAreas(
-        array $arTables, $strDumpFile
+    public function createDumpToAreas(
+        array $arTables, string $strDumpFile, string $targetName = null
     ) {
         $tempFolder = $this->getSyncFolder()->getSubfolder($this->strTempFolder);
         $filename = date('YmdHis_') . $strDumpFile;
         $tempFileIdentifier = $tempFolder->getIdentifier() . $strDumpFile;
+        $target = $targetName ?? $this->MOD_SETTINGS['target'];
+
 
         if ( $this->getDefaultStorage()->hasFile($tempFileIdentifier)
              || $this->getDefaultStorage()->hasFile($tempFileIdentifier . '.gz')
@@ -1222,7 +1226,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
             return false;
         }
 
-        foreach (Area::getMatchingAreas($this->MOD_SETTINGS['target']) as $area) {
+        foreach (Area::getMatchingAreas($target) as $area) {
             foreach ($area->getDirectories() as $strPath) {
                 if ($this->isSystemLocked($strPath)) {
                     $this->addWarning($this->getLabel('warning.system_locked', ['{system}' => $strPath]));

@@ -1,7 +1,10 @@
 <?php
 namespace Netresearch\NrSync\Module;
 
+use Doctrine\DBAL\FetchMode;
 use Netresearch\NrSync\Traits\TranslationTrait;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Methods to work with synchronization areas
@@ -53,4 +56,28 @@ class NewsModule extends BaseModule
      * @var int Level who is allowed to access
      */
     protected $accessLevel = 0;
+
+    /**
+     * Returns the PageID to clear the cache for.
+     *
+     * @return array
+     */
+    public function getPagesToClearCache(): array
+    {
+        $connection  = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tt_content');
+
+        $queryBuilder = $connection->createQueryBuilder();
+
+        $queryBuilder->select('pid')
+            ->from('tt_content')
+            ->where(
+                $queryBuilder->expr()->like('list_type', $queryBuilder->createNamedParameter('%news%'))
+            )->groupBy('pid');
+
+        try {
+            return $queryBuilder->execute()->fetchAll(FetchMode::COLUMN);
+        } catch (\Exception $exception) {
+            return [];
+        }
+    }
 }

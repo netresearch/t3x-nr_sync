@@ -908,6 +908,11 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
                     $this->function->getTableNames(), $strDumpFile
                 );
 
+                if ($bSyncResult && method_exists($this->function, 'getPagesToClearCache')) {
+                    $arPageIDs = $this->function->getPagesToClearCache();
+                    $this->createClearCacheFile('pages', $arPageIDs);
+                }
+
                 if ($bSyncResult) {
                     $this->addSuccess(
                         $this->getLabel('success.sync_initiated')

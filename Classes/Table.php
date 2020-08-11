@@ -116,7 +116,7 @@ class Table
             return $this->dumpFile;
         }
 
-        $this->dumpFile = $this->getDefaultStorage()->getFile($this->strDumpFile);
+        $this->dumpFile = $this->getTempFolder()->getStorage()->getFile($this->strDumpFile);
         return $this->dumpFile;
     }
 

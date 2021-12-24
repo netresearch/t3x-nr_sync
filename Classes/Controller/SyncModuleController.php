@@ -9,6 +9,7 @@ use Netresearch\NrSync\Helper\Area;
 use Netresearch\NrSync\Module\AssetModule;
 use Netresearch\NrSync\Module\BaseModule;
 use Netresearch\NrSync\Module\FalModule;
+use Netresearch\NrSync\Module\NewsModule;
 use Netresearch\NrSync\Module\StateModule;
 use Netresearch\NrSync\SyncList;
 use Netresearch\NrSync\SyncListManager;
@@ -219,7 +220,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
                 'sys_redirect',
             ],
             'dumpFileName' => 'sys_redirect.sql',
-            'accessLevel'  => 100,
+            'accessLevel'  => 50,
         ],
     ];
 
@@ -279,6 +280,10 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
             ];
         }
 
+        if (ExtensionManagementUtility::isLoaded('news')) {
+            $this->arFunctions[48] = NewsModule::class;
+        }
+
         $this->getLanguageService()->includeLLFile('EXT:nr_sync/Resources/Private/Language/locallang.xlf');
         $this->MCONF = [
             'name' => $this->moduleName,
@@ -321,10 +326,6 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
      */
     private function initFolders(): void
     {
-        if (false === $this->getSyncFolder()->hasFolder($this->strTempFolder)) {
-            $this->getSyncFolder()->createFolder($this->strTempFolder);
-        }
-
         foreach ($this->getArea()->getSystems() as $system) {
             if (false === $this->getSyncFolder()->hasFolder($system['directory'] . '/')) {
                 $this->getSyncFolder()->createFolder($system['directory'] . '/');
@@ -903,6 +904,11 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
                     $this->function->getTableNames(), $strDumpFile
                 );
 
+                if ($bSyncResult && method_exists($this->function, 'getPagesToClearCache')) {
+                    $arPageIDs = $this->function->getPagesToClearCache();
+                    $this->createClearCacheFile('pages', $arPageIDs);
+                }
+
                 if ($bSyncResult) {
                     $this->addSuccess(
                         $this->getLabel('success.sync_initiated')
@@ -1171,21 +1177,25 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
     }
 
     /**
+     * Creating dump to areas
      *
-     * @param string[] $arTables     Table names
-     * @param string   $strDumpFile  Name of the dump file.
+     * @param string[]      $arTables    Table names
+     * @param string        $strDumpFile Name of the dump file.
+     * @param string|null   $targetName  Target to create sync for
      *
      * @return boolean success
      */
-    protected function createDumpToAreas(
-        array $arTables, $strDumpFile
+    public function createDumpToAreas(
+        array $arTables, string $strDumpFile, string $targetName = null
     ) {
-        $tempFolder = $this->getSyncFolder()->getSubfolder($this->strTempFolder);
+        $tempFolder = $this->getTempFolder();
         $filename = date('YmdHis_') . $strDumpFile;
         $tempFileIdentifier = $tempFolder->getIdentifier() . $strDumpFile;
+        $target = $targetName ?? $this->MOD_SETTINGS['target'];
 
-        if ( $this->getDefaultStorage()->hasFile($tempFileIdentifier)
-             || $this->getDefaultStorage()->hasFile($tempFileIdentifier . '.gz')
+
+        if ( $this->getTempFolder()->getStorage()->hasFile($tempFileIdentifier)
+             || $this->getTempFolder()->getStorage()->hasFile($tempFileIdentifier . '.gz')
         ) {
             $this->addError(
                 $this->getLabel('error.last_sync_not_finished')
@@ -1193,7 +1203,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
             return false;
         }
 
-        $this->getDefaultStorage()->createFile(
+        $this->getTempFolder()->getStorage()->createFile(
             $strDumpFile, $tempFolder
         );
 
@@ -1207,7 +1217,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
 
 
         try {
-            $dumpFile = $this->getDefaultStorage()->getFile($tempFileIdentifier);
+            $dumpFile = $this->getTempFolder()->getStorage()->getFile($tempFileIdentifier);
         } catch (\Exception $exception) {
             $this->addInfo(
                 $this->getLabel('info.no_data_dumped')
@@ -1222,7 +1232,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
             return false;
         }
 
-        foreach (Area::getMatchingAreas($this->MOD_SETTINGS['target']) as $area) {
+        foreach (Area::getMatchingAreas($target) as $area) {
             foreach ($area->getDirectories() as $strPath) {
                 if ($this->isSystemLocked($strPath)) {
                     $this->addWarning($this->getLabel('warning.system_locked', ['{system}' => $strPath]));
@@ -1249,7 +1259,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
                 return false;
             }
         }
-        $this->getDefaultStorage()->deleteFile($compressedDumFile);
+        $this->getTempFolder()->getStorage()->deleteFile($compressedDumFile);
         return true;
     }
 
@@ -1352,11 +1362,13 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
      */
     private function openTempDumpFile(string $strFileName, array $arDirectories): FileInterface
     {
-        $tempFolder = $this->getSyncFolder()->getSubfolder($this->strTempFolder);
+        $tempFolder = $this->getTempFolder();
         $tempDumpFileIdentifier = $tempFolder->getIdentifier() . $strFileName;
 
-        if ($this->getDefaultStorage()->hasFile($tempDumpFileIdentifier)
-            || $this->getDefaultStorage()->hasFile($tempDumpFileIdentifier . '.gz')
+        $tempStorage = $tempFolder->getStorage();
+
+        if ($tempStorage->hasFile($tempDumpFileIdentifier)
+            || $tempStorage->hasFile($tempDumpFileIdentifier . '.gz')
         ) {
             throw new Exception(
                 $this->getLabel('error.last_sync_not_finished')
@@ -1364,8 +1376,8 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
                 . $tempDumpFileIdentifier . "(.gz)"
             );
         }
-
         foreach ($arDirectories as $strPath) {
+
             $folder = $this->getSyncFolder()->getSubfolder($strPath);
             $fileIdentifier = $folder->getIdentifier() . $strFileName;
 
@@ -1378,7 +1390,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
             }
         }
 
-        return $this->getDefaultStorage()->createFile($strFileName, $tempFolder);
+        return $tempStorage->createFile($strFileName, $tempFolder);
     }
 
 
@@ -1395,7 +1407,8 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
      */
     private function finalizeDumpFile($strDumpFile, array $arDirectories, $bZipFile)
     {
-        $tempFolder = $this->getSyncFolder()->getSubfolder($this->strTempFolder);
+        $tempFolder  = $this->getTempFolder();
+        $tempStorage = $tempFolder->getStorage();
 
         if ($bZipFile) {
             // Dateien komprimieren
@@ -1414,7 +1427,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
             $folder = $this->getSyncFolder()->getSubfolder($strPath);
             $this->getDefaultStorage()->copyFile($dumpFile, $folder);
         }
-        $this->getDefaultStorage()->deleteFile($dumpFile);
+        $tempStorage->deleteFile($dumpFile);
     }
 
 
@@ -2053,14 +2066,16 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
      */
     protected function createGZipFile(Folder $folder, string $fileName): ?FileInterface
     {
+        $tempStorage = $this->getTempFolder()->getStorage();
+
         try {
             $fileIdentifier = $folder->getIdentifier() . $fileName;
-            $dumpFile = $this->getDefaultStorage()->getFile($fileIdentifier);
-            $compressedDumpFile = $this->getDefaultStorage()->createFile(
+            $dumpFile = $tempStorage->getFile($fileIdentifier);
+            $compressedDumpFile = $tempStorage->createFile(
                 $fileName . '.gz', $folder
             );
             $compressedDumpFile->setContents(gzencode($dumpFile->getContents(), 9));
-            $this->getDefaultStorage()->deleteFile($dumpFile);
+            $tempStorage->deleteFile($dumpFile);
         } catch (\Exception $exception) {
             $this->addError($this->getLabel('error.zip_failure', ['{file}' => $dumpFile->getIdentifier()]));
             return null;
@@ -2082,6 +2097,7 @@ class SyncModuleController extends \TYPO3\CMS\Backend\Module\BaseScriptClass
         $menu->setLabel(
             $this->getLabel('label.sync_type')
         );
+
         foreach ($this->MOD_MENU['function'] as $controller => $title) {
             $item = $menu
                 ->makeMenuItem()

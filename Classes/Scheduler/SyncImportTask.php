@@ -115,9 +115,15 @@ class SyncImportTask extends AbstractTask
         foreach ($urlFiles as $name => $file) {
             $this->getLogger()->info("start processing $name");
             $matches = [];
-            preg_match('/([a-zA-Z]+\:[0-9]+)/', $file->getContents(), $matches);
+            preg_match_all('/([a-zA-Z]+\:[0-9]+)/', $file->getContents(), $matches);
 
-            foreach ($matches as $match) {
+            $cacheEntries = reset($matches);
+
+            if (! is_array($cacheEntries)) {
+                $cacheEntries = [];
+            }
+
+            foreach ($cacheEntries as $match) {
                 list($table, $uid) = explode(':', $match);
                 $tce->clear_cacheCmd((int) $uid);
             }
@@ -193,6 +199,7 @@ class SyncImportTask extends AbstractTask
                 unset($files[$name]);
             }
         }
+
 
         return $files;
     }

@@ -2,6 +2,7 @@
 
 namespace Netresearch\NrSync;
 
+use Doctrine\DBAL\FetchMode;
 use Netresearch\NrSync\Helper\Area;
 use Netresearch\NrSync\Traits\TranslationTrait;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
@@ -232,8 +233,37 @@ class SyncList
 
             }
         }
+
+        $arPageIDs = array_merge($arPageIDs, $this->getPageTranslations($arPageIDs));
         $arPageIDs = array_unique($arPageIDs);
+
         return $arPageIDs;
+    }
+
+    /**
+     * Returns the page id of translation records
+     *
+     * @param array $pages Array with page ids
+     *
+     * @return array
+     */
+    private function getPageTranslations(array $pages = []): array
+    {
+        if (empty($pages)) {
+            return [];
+        }
+
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class)
+                                    ->getConnectionForTable('pages');
+
+        $queryBuilder = $connection->createQueryBuilder();
+
+        return $queryBuilder->select('uid')
+            ->from('pages')
+            ->where($queryBuilder->expr()->in('l10n_parent', $pages))
+            ->groupBy('uid')
+            ->execute()
+            ->fetchAll(FetchMode::COLUMN);
     }
 
 
@@ -242,10 +272,6 @@ class SyncList
     {
         unset($this->arSyncList[$areaID]);
     }
-
-
-
-
 
     /**
      * Adds the elements from the sync list as section into the content of the
@@ -266,8 +292,6 @@ class SyncList
 
         return $this->content;
     }
-
-
 
     /**
      * Adds the elements of an Netresearch\NrSync\Helper\Area from the synclist as section into the content

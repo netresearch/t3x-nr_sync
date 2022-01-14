@@ -15,10 +15,9 @@
 
 ![Workflow](Documentation/Images/SyncWorkflow.png)
 
-The extension provides an easy and editor friendly way to prepare the content for a synchronization to other
-environments e.g. live, testing or development systems. All the synchronizations can be done complete or incrementel to
-keep the required load to a absolut minimum.
-The extension won't do the synchronization by itself.
+The extension provides an easy and editor friendly way to prepare the content for a synchronization to other 
+environments e.g. live, testing or development systems. All the synchronizations can be done complete or 
+incremental to keep the required load to an absolute minimum. The extension won't do the synchronization by itself.
 
 ## Synchronization procedure
 

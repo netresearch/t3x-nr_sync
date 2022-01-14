@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2019-09-10T12:51:17Z" product-name="nr_sync" target-language="en">
+    <header/>
+    <body>
+      <trans-unit id="tx_nrsnyc_scheduler.name">
+        <source>Import Sync</source>
+        <target state="needs-translation">Import Sync</target>
+      </trans-unit>
+      <trans-unit id="tx_nrsnyc_scheduler.description">
+        <source>Task to import syncs</source>
+        <target state="needs-translation">Task to import syncs</target>
+      </trans-unit>
+      <trans-unit id="enable_reporting">
+        <source>Enable email reporting</source>
+        <target state="needs-translation">Enable email reporting</target>
+      </trans-unit>
+      <trans-unit id="reporting_emails">
+        <source>Reporting email addresses</source>
+        <target state="needs-translation">Reporting email addresses</target>
+      </trans-unit>
+      <trans-unit id="reporting_subject">
+        <source>Subject of the reporting emails</source>
+        <target state="needs-translation">Subject of the reporting emails</target>
+      </trans-unit>
+      <trans-unit id="reporting_message">
+        <source>Message of the reporting email</source>
+        <target state="needs-translation">Message of the reporting email</target>
+      </trans-unit>
+      <trans-unit id="environment">
+        <source>Environment (TYPO3_CONTEXT) where the scheduler task should run</source>
+        <target state="needs-translation">Environment (TYPO3_CONTEXT) where the scheduler task should run</target>
+      </trans-unit>
+      <trans-unit id="sync_storage_path">
+        <source>Path where the sync file are stored in.</source>
+        <target state="needs-translation">Path where the sync file are stored in.</target>
+      </trans-unit>
+      <trans-unit id="sync_urls_path">
+        <source>Path where the urls files to execute are stored in.</source>
+        <target state="needs-translation">Path where the urls files to execute are stored in.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

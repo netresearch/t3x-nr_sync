@@ -3,41 +3,41 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2019-09-10T12:51:17Z" product-name="nr_sync" target-language="de">
     <header/>
     <body>
-      <trans-unit id="tx_nrsnyc_scheduler.name">
+      <trans-unit id="tx_nrsnyc_scheduler.name" approved="yes">
         <source>Import Sync</source>
-        <target state="needs-translation">Import Sync</target>
+        <target state="final">Importiere Sync</target>
       </trans-unit>
-      <trans-unit id="tx_nrsnyc_scheduler.description">
+      <trans-unit id="tx_nrsnyc_scheduler.description" approved="yes">
         <source>Task to import syncs</source>
-        <target state="needs-translation">Task to import syncs</target>
+        <target state="final">Aufgabe zum Importieren von Syncs</target>
       </trans-unit>
-      <trans-unit id="enable_reporting">
+      <trans-unit id="enable_reporting" approved="yes">
         <source>Enable email reporting</source>
-        <target state="needs-translation">Enable email reporting</target>
+        <target state="final">E-Mail-Benachrichtigung aktivieren</target>
       </trans-unit>
-      <trans-unit id="reporting_emails">
+      <trans-unit id="reporting_emails" approved="yes">
         <source>Reporting email addresses</source>
-        <target state="needs-translation">Reporting email addresses</target>
+        <target state="final">Benachrichtigung E-Mail-Adressen</target>
       </trans-unit>
-      <trans-unit id="reporting_subject">
+      <trans-unit id="reporting_subject" approved="yes">
         <source>Subject of the reporting emails</source>
-        <target state="needs-translation">Subject of the reporting emails</target>
+        <target state="final">Betreff der Benachrichtungs-E-Mails</target>
       </trans-unit>
-      <trans-unit id="reporting_message">
+      <trans-unit id="reporting_message" approved="yes">
         <source>Message of the reporting email</source>
-        <target state="needs-translation">Message of the reporting email</target>
+        <target state="final">Nachricht der Benachrichtungs-E-Mail</target>
       </trans-unit>
-      <trans-unit id="environment">
+      <trans-unit id="environment" approved="yes">
         <source>Environment (TYPO3_CONTEXT) where the scheduler task should run</source>
-        <target state="needs-translation">Environment (TYPO3_CONTEXT) where the scheduler task should run</target>
+        <target state="final">Umgebung (TYPO3_CONTEXT) in der die Scheduler-Aufgabe ausgeführt werden soll</target>
       </trans-unit>
-      <trans-unit id="sync_storage_path">
+      <trans-unit id="sync_storage_path" approved="yes">
         <source>Path where the sync file are stored in.</source>
-        <target state="needs-translation">Path where the sync file are stored in.</target>
+        <target state="final">Pfad, in dem die Sync-Datei gespeichert wird.</target>
       </trans-unit>
-      <trans-unit id="sync_urls_path">
+      <trans-unit id="sync_urls_path" approved="yes">
         <source>Path where the urls files to execute are stored in.</source>
-        <target state="needs-translation">Path where the urls files to execute are stored in.</target>
+        <target state="final">Pfad, in dem die auszuführenden Urls Dateien gespeichert werden.</target>
       </trans-unit>
     </body>
   </file>

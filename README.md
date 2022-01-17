@@ -3,6 +3,7 @@
 # nr_sync - TYPO3 Content Synchronization
 
 [![Crowdin](https://badges.crowdin.net/typo3-extension-nr-sync/localized.svg)](https://crowdin.com/project/typo3-extension-nr-sync)
+[![Latest Stable Version](http://poser.pugx.org/netresearch/nr-sync/v)](https://packagist.org/packages/netresearch/nr-sync) [![Total Downloads](http://poser.pugx.org/netresearch/nr-sync/downloads)](https://packagist.org/packages/netresearch/nr-sync) [![Latest Unstable Version](http://poser.pugx.org/netresearch/nr-sync/v/unstable)](https://packagist.org/packages/netresearch/nr-sync) [![License](http://poser.pugx.org/netresearch/nr-sync/license)](https://packagist.org/packages/netresearch/nr-sync) [![PHP Version Require](http://poser.pugx.org/netresearch/nr-sync/require/php)](https://packagist.org/packages/netresearch/nr-sync)
 
 ## Introduction
 

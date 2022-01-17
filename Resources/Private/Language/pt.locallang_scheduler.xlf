@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-  <file source-language="en" datatype="plaintext" original="messages" date="2019-09-10T12:51:17Z" product-name="nr_sync" target-language="pt-BR">
+  <file source-language="en" datatype="plaintext" original="messages" date="2019-09-10T12:51:17Z" product-name="nr_sync" target-language="pt-PT">
     <header/>
     <body>
       <trans-unit id="tx_nrsnyc_scheduler.name">

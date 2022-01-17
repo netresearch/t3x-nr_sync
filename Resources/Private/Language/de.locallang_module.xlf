@@ -3,333 +3,333 @@
   <file source-language="en" datatype="plaintext" original="messages" product-name="nr_sync" target-language="de">
     <header/>
     <body>
-      <trans-unit id="waitingfiles">
+      <trans-unit id="waitingfiles" approved="yes">
         <source>{files} files waiting for synchronisation {size}. Oldest file from {oldestFile} and therefor {minutes} minutes old.</source>
-        <target state="needs-translation">{files} files waiting for synchronisation {size}. Oldest file from {oldestFile} and therefor {minutes} minutes old.</target>
+        <target state="final">{files} Dateien, die auf die Synchronisation {size} warten. Älteste Datei von {oldestFile} und damit {minutes} Minuten alt.</target>
       </trans-unit>
-      <trans-unit id="error.no_page">
+      <trans-unit id="error.no_page" approved="yes">
         <source>Please select a page from the page tree.</source>
-        <target state="needs-translation">Please select a page from the page tree.</target>
+        <target state="final">Bitte wählen Sie eine Seite aus dem Seitenbaum.</target>
       </trans-unit>
-      <trans-unit id="error.page_not_load">
+      <trans-unit id="error.page_not_load" approved="yes">
         <source>Could not load record for selected page: {page_selected}</source>
-        <target state="needs-translation">Could not load record for selected page: {page_selected}</target>
+        <target state="final">Konnte Datensatz für die ausgewählte Seite nicht laden: {page_selected}</target>
       </trans-unit>
-      <trans-unit id="error.page_type_not_allowed">
+      <trans-unit id="error.page_type_not_allowed" approved="yes">
         <source>'Page type not allowed to sync.'</source>
-        <target state="needs-translation">'Page type not allowed to sync.'</target>
+        <target state="final">'Seitentyp kann nicht synchronisiert werden.'</target>
       </trans-unit>
-      <trans-unit id="error.selectSyncType">
+      <trans-unit id="error.selectSyncType" approved="yes">
         <source>Please select a sync-type from the dropdown above.</source>
-        <target state="needs-translation">Please select a sync-type from the dropdown above.</target>
+        <target state="final">Bitte wählen Sie einen Sync-Typ aus der Dropdown-Liste oben.</target>
       </trans-unit>
-      <trans-unit id="label.page_only">
+      <trans-unit id="label.page_only" approved="yes">
         <source>Only selected page</source>
-        <target state="needs-translation">Only selected page</target>
+        <target state="final">Nur ausgewählte Seite</target>
       </trans-unit>
-      <trans-unit id="label.page_and_subpages">
+      <trans-unit id="label.page_and_subpages" approved="yes">
         <source>Selected page and all {pages} sub pages</source>
-        <target state="needs-translation">Selected page and all {pages} sub pages</target>
+        <target state="final">Ausgewählte Seite und alle {pages} Unterseiten</target>
       </trans-unit>
-      <trans-unit id="label.subpages_including">
+      <trans-unit id="label.subpages_including" approved="yes">
         <source>(thereof are {deleted} deleted, {noaccess} are inaccessible and {falses} have wrong document type)</source>
-        <target state="needs-translation">(thereof are {deleted} deleted, {noaccess} are inaccessible and {falses} have wrong document type)</target>
+        <target state="final">(davon werden {deleted} gelöscht, {noaccess} sind nicht zugänglich und {falses} haben einen falschen Dokumententyp)</target>
       </trans-unit>
-      <trans-unit id="label.excluded_pages">
+      <trans-unit id="label.excluded_pages" approved="yes">
         <source>There are restricted sub areas which are excluded from sync.</source>
-        <target state="needs-translation">There are restricted sub areas which are excluded from sync.</target>
+        <target state="final">Es gibt eingeschränkte Unterbereiche, die von der Synchronisierung ausgeschlossen sind.</target>
       </trans-unit>
-      <trans-unit id="error.select_mark_type">
+      <trans-unit id="error.select_mark_type" approved="yes">
         <source>Please select how the page should be marked.</source>
-        <target state="needs-translation">Please select how the page should be marked.</target>
+        <target state="final">Bitte wählen Sie, wie die Seite markiert werden soll.</target>
       </trans-unit>
-      <trans-unit id="button.add_to_list">
+      <trans-unit id="button.add_to_list" approved="yes">
         <source>Add to sync list</source>
-        <target state="needs-translation">Add to sync list</target>
+        <target state="final">Zur Sync-Liste hinzufügen</target>
       </trans-unit>
-      <trans-unit id="button.recursion_depth">
+      <trans-unit id="button.recursion_depth" approved="yes">
         <source>set recursion depth</source>
-        <target state="needs-translation">set recursion depth</target>
+        <target state="final">rekursive Tiefe setzen</target>
       </trans-unit>
-      <trans-unit id="message.target_locked">
+      <trans-unit id="message.target_locked" approved="yes">
         <source>Target {target} disabled for sync.</source>
-        <target state="needs-translation">Target {target} disabled for sync.</target>
+        <target state="final">Ziel {target} für Synchronisierung deaktiviert.</target>
       </trans-unit>
-      <trans-unit id="message.target_unlocked">
+      <trans-unit id="message.target_unlocked" approved="yes">
         <source>Target {target} enabled for sync.</source>
-        <target state="needs-translation">Target {target} enabled for sync.</target>
+        <target state="final">Ziel {target} für die Synchronisierung aktiviert.</target>
       </trans-unit>
-      <trans-unit id="headline.crate_sync">
+      <trans-unit id="headline.crate_sync" approved="yes">
         <source>Create new Sync</source>
-        <target state="needs-translation">Create new Sync</target>
+        <target state="final">Neue Synchronisation erstellen</target>
       </trans-unit>
-      <trans-unit id="error.sync_in_progress">
+      <trans-unit id="error.sync_in_progress" approved="yes">
         <source>Please re-try in a couple of minutes.</source>
-        <target state="needs-translation">Please re-try in a couple of minutes.</target>
+        <target state="final">Bitte versuchen Sie es in ein paar Minuten erneut.</target>
       </trans-unit>
-      <trans-unit id="success.sync_in_progress">
+      <trans-unit id="success.sync_in_progress" approved="yes">
         <source>Sync started - should be processed within in next 15 minutes.</source>
-        <target state="needs-translation">Sync started - should be processed within in next 15 minutes.</target>
+        <target state="final">Synchronisation gestartet - sollte in den nächsten 15 Minuten verarbeitet werden.</target>
       </trans-unit>
-      <trans-unit id="success.sync_initiated">
+      <trans-unit id="success.sync_initiated" approved="yes">
         <source>Sync initiated.</source>
-        <target state="needs-translation">Sync initiated.</target>
+        <target state="final">Sync gestartet.</target>
       </trans-unit>
-      <trans-unit id="label.force_full_sync">
+      <trans-unit id="label.force_full_sync" approved="yes">
         <source>Force full sync. A full sync of this element will be initiated even if an incremental sync is possible. This should be avoided.</source>
-        <target state="needs-translation">Force full sync. A full sync of this element will be initiated even if an incremental sync is possible. This should be avoided.</target>
+        <target state="final">Vollsynchronisation erzwingen. Eine vollständige Synchronisation dieses Elements wird gestartet, auch wenn eine inkrementelle Synchronisation möglich ist. Dies sollte vermieden werden.</target>
       </trans-unit>
-      <trans-unit id="label.delete_obsolete_rows">
+      <trans-unit id="label.delete_obsolete_rows" approved="yes">
         <source>Delete obsolete Rows on LIVE system. All Rows which are hidden or deleted or where endtime is a date in past will be deleted on target system</source>
-        <target state="needs-translation">Delete obsolete Rows on LIVE system. All Rows which are hidden or deleted or where endtime is a date in past will be deleted on target system</target>
+        <target state="final">Löschen Sie veraltete Einträge im LIVE-System. Alle Einträge, die verborgen oder gelöscht sind oder deren Enddatum in der Vergangenheit liegt, werden auf dem Zielsystem gelöscht</target>
       </trans-unit>
-      <trans-unit id="headline.table_state">
+      <trans-unit id="headline.table_state" approved="yes">
         <source>Table sync status:</source>
-        <target state="needs-translation">Table sync status:</target>
+        <target state="final">Tabellenstatus:</target>
       </trans-unit>
-      <trans-unit id="column.table">
+      <trans-unit id="column.table" approved="yes">
         <source>Table</source>
-        <target state="needs-translation">Table</target>
+        <target state="final">Tabelle</target>
       </trans-unit>
-      <trans-unit id="column.last_sync">
+      <trans-unit id="column.last_sync" approved="yes">
         <source>Last sync time</source>
-        <target state="needs-translation">Last sync time</target>
+        <target state="final">Zeitpunkt der letzten Synchronisierung</target>
       </trans-unit>
-      <trans-unit id="column.last_type">
+      <trans-unit id="column.last_type" approved="yes">
         <source>Last sync type</source>
-        <target state="needs-translation">Last sync type</target>
+        <target state="final">Letzter Sync-Typ</target>
       </trans-unit>
-      <trans-unit id="column.last_user">
+      <trans-unit id="column.last_user" approved="yes">
         <source>Last sync user</source>
-        <target state="needs-translation">Last sync user</target>
+        <target state="final">Letzter Sync-Benutzer</target>
       </trans-unit>
-      <trans-unit id="sync_type.full">
+      <trans-unit id="sync_type.full" approved="yes">
         <source>full</source>
-        <target state="needs-translation">full</target>
+        <target state="final">voll</target>
       </trans-unit>
-      <trans-unit id="sync_type.incr">
+      <trans-unit id="sync_type.incr" approved="yes">
         <source>incremental</source>
-        <target state="needs-translation">incremental</target>
+        <target state="final">inkrementell</target>
       </trans-unit>
-      <trans-unit id="error.page_is_marked">
+      <trans-unit id="error.page_is_marked" approved="yes">
         <source>The page has been already marked for synchronisation</source>
-        <target state="needs-translation">The page has been already marked for synchronisation</target>
+        <target state="final">Die Seite wurde bereits zur Synchronisierung markiert</target>
       </trans-unit>
-      <trans-unit id="headline.sync_list">
+      <trans-unit id="headline.sync_list" approved="yes">
         <source>Sync List</source>
-        <target state="needs-translation">Sync List</target>
+        <target state="final">Synchronisationsliste</target>
       </trans-unit>
-      <trans-unit id="column.item">
+      <trans-unit id="column.item" approved="yes">
         <source>Item</source>
-        <target state="needs-translation">Item</target>
+        <target state="final">Element</target>
       </trans-unit>
-      <trans-unit id="column.action">
+      <trans-unit id="column.action" approved="yes">
         <source>Action</source>
-        <target state="needs-translation">Action</target>
+        <target state="final">Aktion</target>
       </trans-unit>
-      <trans-unit id="key">
+      <trans-unit id="key" approved="yes">
         <source>text</source>
-        <target state="needs-translation">text</target>
+        <target state="final">Text</target>
       </trans-unit>
-      <trans-unit id="label.list_with_subs">
+      <trans-unit id="label.list_with_subs" approved="yes">
         <source>({pages} sub pages with {deleted} deleted and {noaccess} inaccessible.)</source>
-        <target state="needs-translation">({pages} sub pages with {deleted} deleted and {noaccess} inaccessible.)</target>
+        <target state="final">({pages} Unterseiten mit {deleted} gelöscht und {noaccess} unzugänglich.)</target>
       </trans-unit>
-      <trans-unit id="label.page">
+      <trans-unit id="label.page" approved="yes">
         <source>Page: {id}</source>
-        <target state="needs-translation">Page: {id}</target>
+        <target state="final">Seite: {id}</target>
       </trans-unit>
-      <trans-unit id="button.create_sync">
+      <trans-unit id="button.create_sync" approved="yes">
         <source>Create Snyc</source>
-        <target state="needs-translation">Create Snyc</target>
+        <target state="final">Synchronisation erstellen</target>
       </trans-unit>
-      <trans-unit id="headline.waiting_syncs">
+      <trans-unit id="headline.waiting_syncs" approved="yes">
         <source>Waiting Syncs</source>
-        <target state="needs-translation">Waiting Syncs</target>
+        <target state="final">Warte auf Synchronisation</target>
       </trans-unit>
-      <trans-unit id="label.sync_target">
+      <trans-unit id="label.sync_target" approved="yes">
         <source>sync-target</source>
-        <target state="needs-translation">sync-target</target>
+        <target state="final">Synchronisations-Ziel</target>
       </trans-unit>
-      <trans-unit id="column.file">
+      <trans-unit id="column.file" approved="yes">
         <source>File</source>
-        <target state="needs-translation">File</target>
+        <target state="final">Datei</target>
       </trans-unit>
-      <trans-unit id="column.size">
+      <trans-unit id="column.size" approved="yes">
         <source>Size</source>
-        <target state="needs-translation">Size</target>
+        <target state="final">Größe</target>
       </trans-unit>
-      <trans-unit id="error.last_sync_not_finished">
+      <trans-unit id="error.last_sync_not_finished" approved="yes">
         <source>There ist already a sync-preparation in progress. Please retry in about 5 Minutes</source>
-        <target state="needs-translation">There ist already a sync-preparation in progress. Please retry in about 5 Minutes</target>
+        <target state="final">Es ist bereits eine Synchronisations-Vorbereitung im Gange. Bitte versuchen Sie es in etwa 5 Minuten erneut</target>
       </trans-unit>
-      <trans-unit id="info.no_data_dumped">
+      <trans-unit id="info.no_data_dumped" approved="yes">
         <source>'No data dumped for further processing. The selected sync process did not produce any data to be synced to the target system.'</source>
-        <target state="needs-translation">'No data dumped for further processing. The selected sync process did not produce any data to be synced to the target system.'</target>
+        <target state="final">"Keine Daten für die weitere Verarbeitung. Der ausgewählte Sync-Prozess hat keine Daten erzeugt, die mit dem Zielsystem synchronisiert werden können."</target>
       </trans-unit>
-      <trans-unit id="error.zip_failure">
+      <trans-unit id="error.zip_failure" approved="yes">
         <source>Zipfile for {file} could not be created.</source>
-        <target state="needs-translation">Zipfile for {file} could not be created.</target>
+        <target state="final">Zip-Datei für {file} konnte nicht erstellt werden.</target>
       </trans-unit>
-      <trans-unit id="warning.system_locked">
+      <trans-unit id="warning.system_locked" approved="yes">
         <source>System '{system} is locked so no dump-file is created for it.'</source>
-        <target state="needs-translation">System '{system} is locked so no dump-file is created for it.'</target>
+        <target state="final">System '{system} ist gesperrt, damit keine Dump-Datei erstellt wird.'</target>
       </trans-unit>
-      <trans-unit id="error.cannot_move_file">
+      <trans-unit id="error.cannot_move_file" approved="yes">
         <source>File {file} could not be moved to {target}.</source>
-        <target state="needs-translation">File {file} could not be moved to {target}.</target>
+        <target state="final">Datei {file} konnte nicht nach {target} verschoben werden.</target>
       </trans-unit>
-      <trans-unit id="error.no_pages_marked">
+      <trans-unit id="error.no_pages_marked" approved="yes">
         <source>There are no pages marked to sync.</source>
-        <target state="needs-translation">There are no pages marked to sync.</target>
+        <target state="final">Es gibt keine zu synchronisierenden Seiten.</target>
       </trans-unit>
-      <trans-unit id="error.mm_tables">
+      <trans-unit id="error.mm_tables" approved="yes">
         <source>MM tables like {tablename} are not supported anymore.</source>
-        <target state="needs-translation">MM tables like {tablename} are not supported anymore.</target>
+        <target state="final">MM-Tabellen wie {tablename} werden nicht mehr unterstützt.</target>
       </trans-unit>
-      <trans-unit id="success.sync_assests_init">
+      <trans-unit id="success.sync_assests_init" approved="yes">
         <source>Sync assets initiated</source>
-        <target state="needs-translation">Sync assets initiated</target>
+        <target state="final">Synchronisation der Assets initiiert</target>
       </trans-unit>
-      <trans-unit id="warning.table_state">
+      <trans-unit id="warning.table_state" approved="yes">
         <source>Following tables have changed, please contact your TYPO3 admin:</source>
-        <target state="needs-translation">Following tables have changed, please contact your TYPO3 admin:</target>
+        <target state="final">Folgende Tabellen haben sich geändert, bitte kontaktieren Sie Ihren TYPO3-Admin:</target>
       </trans-unit>
-      <trans-unit id="label.target">
+      <trans-unit id="label.target" approved="yes">
         <source>Target</source>
-        <target state="needs-translation">Target</target>
+        <target state="final">Ziel</target>
       </trans-unit>
-      <trans-unit id="label.content">
+      <trans-unit id="label.content" approved="yes">
         <source>Content</source>
-        <target state="needs-translation">Content</target>
+        <target state="final">Inhalt</target>
       </trans-unit>
-      <trans-unit id="Please select">
+      <trans-unit id="Please select" approved="yes">
         <source>Please select</source>
-        <target state="needs-translation">Please select</target>
+        <target state="final">Bitte wählen</target>
       </trans-unit>
-      <trans-unit id="Assets">
+      <trans-unit id="Assets" approved="yes">
         <source>Assets</source>
-        <target state="needs-translation">Assets</target>
+        <target state="final">Assets</target>
       </trans-unit>
-      <trans-unit id="BE users and groups">
+      <trans-unit id="BE users and groups" approved="yes">
         <source>BE users and groups</source>
-        <target state="needs-translation">BE users and groups</target>
+        <target state="final">Backendbenutzer und Gruppen</target>
       </trans-unit>
-      <trans-unit id="Domain Records">
+      <trans-unit id="Domain Records" approved="yes">
         <source>Domain Records</source>
-        <target state="needs-translation">Domain Records</target>
+        <target state="final">Domain-Datensätze</target>
       </trans-unit>
-      <trans-unit id="FAL">
+      <trans-unit id="FAL" approved="yes">
         <source>FAL</source>
-        <target state="needs-translation">FAL</target>
+        <target state="final">FAL</target>
       </trans-unit>
-      <trans-unit id="News">
+      <trans-unit id="News" approved="yes">
         <source>News</source>
-        <target state="needs-translation">News</target>
+        <target state="final">Nachrichten</target>
       </trans-unit>
-      <trans-unit id="FE groups">
+      <trans-unit id="FE groups" approved="yes">
         <source>FE groups</source>
-        <target state="needs-translation">FE groups</target>
+        <target state="final">Frontend-Gruppen</target>
       </trans-unit>
-      <trans-unit id="Scheduler">
+      <trans-unit id="Scheduler" approved="yes">
         <source>Scheduler</source>
-        <target state="needs-translation">Scheduler</target>
+        <target state="final">Planer</target>
       </trans-unit>
-      <trans-unit id="Single pages with content">
+      <trans-unit id="Single pages with content" approved="yes">
         <source>Single pages with content</source>
-        <target state="needs-translation">Single pages with content</target>
+        <target state="final">Einzelne Seiten mit Inhalt</target>
       </trans-unit>
-      <trans-unit id="TextDB">
+      <trans-unit id="TextDB" approved="yes">
         <source>TextDB</source>
-        <target state="needs-translation">TextDB</target>
+        <target state="final">TextDB</target>
       </trans-unit>
-      <trans-unit id="Table state">
+      <trans-unit id="Table state" approved="yes">
         <source>Table state</source>
-        <target state="needs-translation">Table state</target>
+        <target state="final">Tabellenstatus</target>
       </trans-unit>
-      <trans-unit id="All">
+      <trans-unit id="All" approved="yes">
         <source>All</source>
-        <target state="needs-translation">All</target>
+        <target state="final">Alle</target>
       </trans-unit>
-      <trans-unit id="Integration">
+      <trans-unit id="Integration" approved="yes">
         <source>Integration</source>
-        <target state="needs-translation">Integration</target>
+        <target state="final">Integration</target>
       </trans-unit>
-      <trans-unit id="Production">
+      <trans-unit id="Production" approved="yes">
         <source>Production</source>
-        <target state="needs-translation">Production</target>
+        <target state="final">Produktion</target>
       </trans-unit>
-      <trans-unit id="message.table_state_success">
+      <trans-unit id="message.table_state_success" approved="yes">
         <source>Updated table state.</source>
-        <target state="needs-translation">Updated table state.</target>
+        <target state="final">Tabellenstatus aktualisiert.</target>
       </trans-unit>
-      <trans-unit id="error.could_not_write_tablestate">
+      <trans-unit id="error.could_not_write_tablestate" approved="yes">
         <source>Table-state-file is not writable!</source>
-        <target state="needs-translation">Table-state-file is not writable!</target>
+        <target state="final">Tabellenzustandsdatei ist nicht beschreibbar!</target>
       </trans-unit>
-      <trans-unit id="error.fal_dirty">
+      <trans-unit id="error.fal_dirty" approved="yes">
         <source>FAL has corrupted entries. (Entries with uid_foreign = 0)</source>
-        <target state="needs-translation">FAL has corrupted entries. (Entries with uid_foreign = 0)</target>
+        <target state="final">FAL hat Einträge beschädigt. (Einträge mit uid_foreign = 0)</target>
       </trans-unit>
-      <trans-unit id="label.done">
+      <trans-unit id="label.done" approved="yes">
         <source>done</source>
-        <target state="needs-translation">done</target>
+        <target state="final">fertig</target>
       </trans-unit>
-      <trans-unit id="label.clean_fal">
+      <trans-unit id="label.clean_fal" approved="yes">
         <source>This tasks can take some time, please be patient ...</source>
-        <target state="needs-translation">This tasks can take some time, please be patient ...</target>
+        <target state="final">Diese Aufgaben können einige Zeit dauern, bitte haben Sie Geduld ...</target>
       </trans-unit>
-      <trans-unit id="message.notify_success">
+      <trans-unit id="message.notify_success" approved="yes">
         <source>Signaled "{targe}" target for new sync.</source>
-        <target state="needs-translation">Signaled "{targe}" target for new sync.</target>
+        <target state="final">"{targe}" Ziel für eine neue Synchronisierung signalisiert.</target>
       </trans-unit>
-      <trans-unit id="message.notify_unknown">
+      <trans-unit id="message.notify_unknown" approved="yes">
         <source>Skipped signaling "{target}" target. Unknown notify type: "{notify_type}".</source>
-        <target state="needs-translation">Skipped signaling "{target}" target. Unknown notify type: "{notify_type}".</target>
+        <target state="final">Benachrichtigung "{target}" Ziel übersprungen. Unbekannter Typ: "{notify_type}".</target>
       </trans-unit>
-      <trans-unit id="message.notify_disabled">
+      <trans-unit id="message.notify_disabled" approved="yes">
         <source>Skipped signaling "{target}" target due to signaling disabled.</source>
-        <target state="needs-translation">Skipped signaling "{target}" target due to signaling disabled.</target>
+        <target state="final">Benachrichtigung für "{target}" wurde übersprungen, da deaktiviert.</target>
       </trans-unit>
-      <trans-unit id="message.notify_skipped_context">
+      <trans-unit id="message.notify_skipped_context" approved="yes">
         <source>Skipped signaling "{target}" target due to invalid context. Allowed contexts: {allowed_contexts}'.</source>
-        <target state="needs-translation">Skipped signaling "{target}" target due to invalid context. Allowed contexts: {allowed_contexts}'.</target>
+        <target state="final">Benachrichtigung für "{target}" wurde wegen falschem Context übersprungen. Erlaube Contexte sind: {allowed_contexts}.</target>
       </trans-unit>
-      <trans-unit id="message.hook_files">
+      <trans-unit id="message.hook_files" approved="yes">
         <source>Created {number} hook URL files</source>
-        <target state="needs-translation">Created {number} hook URL files</target>
+        <target state="final">{number} Hook-Url-Dateien wurden erstellt</target>
       </trans-unit>
-      <trans-unit id="warning.urls_system_locked">
+      <trans-unit id="warning.urls_system_locked" approved="yes">
         <source>System '{target}' is locked so no url file is created</source>
-        <target state="needs-translation">System '{target}' is locked so no url file is created</target>
+        <target state="final">System '{target}' ist für die Snychronisation gesperrt. Es werden keine Hook-Dateien erstellt</target>
       </trans-unit>
-      <trans-unit id="label.sync_type">
+      <trans-unit id="label.sync_type" approved="yes">
         <source>Sync</source>
-        <target state="needs-translation">Sync</target>
+        <target state="final">Synchronisation</target>
       </trans-unit>
-      <trans-unit id="label.sync_target">
+      <trans-unit id="label.sync_target" approved="yes">
         <source>Target</source>
-        <target state="needs-translation">sync-target</target>
+        <target state="final">Synchronisations-Ziel</target>
       </trans-unit>
-      <trans-unit id="label.lock_module">
+      <trans-unit id="label.lock_module" approved="yes">
         <source>Lock sync module</source>
-        <target state="needs-translation">Lock sync module</target>
+        <target state="final">Sync-Modul sperren</target>
       </trans-unit>
-      <trans-unit id="label.unlock_module">
+      <trans-unit id="label.unlock_module" approved="yes">
         <source>Unlock sync module</source>
-        <target state="needs-translation">Unlock sync module</target>
+        <target state="final">Synchronisation-Modul entsperren</target>
       </trans-unit>
-      <trans-unit id="label.lock_target">
+      <trans-unit id="label.lock_target" approved="yes">
         <source>Lock sync target: {system}</source>
-        <target state="needs-translation">Lock sync target: {system}</target>
+        <target state="final">Sperre Synchronisations-Ziel: {system}</target>
       </trans-unit>
-      <trans-unit id="label.unlock_target">
+      <trans-unit id="label.unlock_target" approved="yes">
         <source>Unlock sync target: {system}</source>
-        <target state="needs-translation">Unlock sync target: {system}</target>
+        <target state="final">Synchronisation-Ziel entsperren: {system}</target>
       </trans-unit>
-      <trans-unit id="TYPO3 Redirects">
+      <trans-unit id="TYPO3 Redirects" approved="yes">
         <source>TYPO3 Redirects</source>
-        <target state="needs-translation">TYPO3 Redirects</target>
+        <target state="final">TYPO3 Weiterleitungen</target>
       </trans-unit>
     </body>
   </file>

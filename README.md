@@ -2,6 +2,8 @@
 
 # nr_sync - TYPO3 Content Synchronization
 
+[![Crowdin](https://badges.crowdin.net/typo3-extension-nr-sync/localized.svg)](https://crowdin.com/project/typo3-extension-nr-sync)
+
 ## Introduction
 
 | NOTE: Please be aware that this extension is an alpha version. A lot of refactoring and development is still required to make it "production" ready. Contribution appriciated . |

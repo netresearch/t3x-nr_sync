@@ -45,7 +45,7 @@
       </trans-unit>
       <trans-unit id="button.add_to_list">
         <source>Add to sync list</source>
-        <target state="needs-translation">Add to sync list</target>
+        <target state="translated">Ajouter à la liste de synchronisation</target>
       </trans-unit>
       <trans-unit id="button.recursion_depth">
         <source>set recursion depth</source>
@@ -61,7 +61,7 @@
       </trans-unit>
       <trans-unit id="headline.crate_sync">
         <source>Create new Sync</source>
-        <target state="needs-translation">Create new Sync</target>
+        <target state="translated">Créer une nouvelle synchronisation</target>
       </trans-unit>
       <trans-unit id="error.sync_in_progress">
         <source>Please re-try in a couple of minutes.</source>
@@ -89,7 +89,7 @@
       </trans-unit>
       <trans-unit id="column.table">
         <source>Table</source>
-        <target state="needs-translation">Table</target>
+        <target state="translated">Tableau</target>
       </trans-unit>
       <trans-unit id="column.last_sync">
         <source>Last sync time</source>
@@ -121,11 +121,11 @@
       </trans-unit>
       <trans-unit id="column.item">
         <source>Item</source>
-        <target state="needs-translation">Item</target>
+        <target state="translated">Élément</target>
       </trans-unit>
       <trans-unit id="column.action">
         <source>Action</source>
-        <target state="needs-translation">Action</target>
+        <target state="translated">Action</target>
       </trans-unit>
       <trans-unit id="key">
         <source>text</source>
@@ -153,11 +153,11 @@
       </trans-unit>
       <trans-unit id="column.file">
         <source>File</source>
-        <target state="needs-translation">File</target>
+        <target state="translated">Fichier</target>
       </trans-unit>
       <trans-unit id="column.size">
         <source>Size</source>
-        <target state="needs-translation">Size</target>
+        <target state="translated">Taille</target>
       </trans-unit>
       <trans-unit id="error.last_sync_not_finished">
         <source>There ist already a sync-preparation in progress. Please retry in about 5 Minutes</source>
@@ -311,9 +311,9 @@
         <source>Target</source>
         <target state="needs-translation">sync-target</target>
       </trans-unit>
-      <trans-unit id="label.lock_module">
+      <trans-unit id="label.lock_module" approved="yes">
         <source>Lock sync module</source>
-        <target state="needs-translation">Lock sync module</target>
+        <target state="final">Verrouiller le module de synchronisation</target>
       </trans-unit>
       <trans-unit id="label.unlock_module">
         <source>Unlock sync module</source>

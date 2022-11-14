@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" datatype="plaintext" original="messages" date="2017-08-31T12:00:00Z" product-name="nr-sync" target-language="zh-CN">
+  <file source-language="en" datatype="plaintext" original="messages" date="2017-08-31T12:00:00Z" product-name="nr-sync" target-language="zh-TW">
     <header/>
     <body>
       <trans-unit id="mlang_tabs_tab" xml:space="preserve">

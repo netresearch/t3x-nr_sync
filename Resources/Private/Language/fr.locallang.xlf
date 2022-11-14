@@ -3,30 +3,30 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2017-08-31T12:00:00Z" product-name="nr-sync" target-language="fr">
     <header/>
     <body>
-      <trans-unit id="mlang_tabs_tab" xml:space="preserve">
+      <trans-unit id="mlang_tabs_tab" xml:space="preserve" approved="yes">
             <source>Netresearch Sync</source>
-         <target state="needs-translation">Netresearch Sync</target></trans-unit>
-      <trans-unit id="mlang_labels_tabdescr" xml:space="preserve">
+         <target state="final">Netresearch Sync</target></trans-unit>
+      <trans-unit id="mlang_labels_tabdescr" xml:space="preserve" approved="yes">
             <source>Netresearch Sync</source>
-         <target state="needs-translation">Netresearch Sync</target></trans-unit>
-      <trans-unit id="lock.label" xml:space="preserve">
+         <target state="final">Netresearch Sync</target></trans-unit>
+      <trans-unit id="lock.label" xml:space="preserve" approved="yes">
             <source>Lock sync module</source>
-         <target state="needs-translation">Lock sync module</target></trans-unit>
-      <trans-unit id="lock.message" xml:space="preserve">
+         <target state="final">Verrouiller le module de synchronisation</target></trans-unit>
+      <trans-unit id="lock.message" xml:space="preserve" approved="yes">
             <source>Message for users in case of active lock</source>
-         <target state="needs-translation">Message for users in case of active lock</target></trans-unit>
-      <trans-unit id="title" xml:space="preserve">
+         <target state="final">Message pour les utilisateurs en cas de verrouillage actif</target></trans-unit>
+      <trans-unit id="title" xml:space="preserve" approved="yes">
             <source>Netresearch Sync</source>
-         <target state="needs-translation">Netresearch Sync</target></trans-unit>
-      <trans-unit id="stop_synchronization" xml:space="preserve">
+         <target state="final">Netresearch Sync</target></trans-unit>
+      <trans-unit id="stop_synchronization" xml:space="preserve" approved="yes">
             <source>Stop synchronization</source>
-         <target state="needs-translation">Stop synchronization</target></trans-unit>
+         <target state="final">Arrêter la synchronisation</target></trans-unit>
       <trans-unit id="lock_synchronization" xml:space="preserve">
             <source>Lock Netresearch Sync Module</source>
          <target state="needs-translation">Lock Netresearch Sync Module</target></trans-unit>
-      <trans-unit id="lock_synchronization_button" xml:space="preserve">
+      <trans-unit id="lock_synchronization_button" xml:space="preserve" approved="yes">
             <source>Lock/Unlock</source>
-         <target state="needs-translation">Lock/Unlock</target></trans-unit>
+         <target state="final">Verrouiller/Déverrouiller</target></trans-unit>
     </body>
   </file>
 </xliff>
